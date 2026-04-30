@@ -5,7 +5,12 @@ const fetch = require('node-fetch');
 const SerpApi = require('google-search-results-nodejs');
 
 const app = express();
-app.use(cors({ origin: 'https://ai-job-search-umber.vercel.app' }));
+app.use(cors({
+  origin: [
+    'https://ai-job-search-umber.vercel.app',
+    'https://ai-job-search-3b0nmn5ug-kushnerchukivans-projects.vercel.app'
+  ]
+}));
 app.use(express.json());
 
 app.post('/api/find-jobs', async (req, res) => {
